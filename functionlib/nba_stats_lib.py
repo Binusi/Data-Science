@@ -23,11 +23,9 @@ def scrape_stats(year, url):
     else:
         print(f"Failed to fetch data for LeBron James in {year}")
 
-def repeated_headers_bball_ref(dataframe):
-    # Combine all the data frames into one
-    dataframe = pd.concat(dataframe, ignore_index=True)
+def repeated_headers_bball_ref(dataframe):    
 
-    # Identify rows where the "G" column contains column names
+    # Identify rows where the "G" column contains column names (these are repeated headers on the b-ball reference site)
     invalid_rows = dataframe[dataframe['G'] == 'G']
 
     # Find their indices and convert them to a list

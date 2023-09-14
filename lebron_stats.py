@@ -17,4 +17,7 @@ for year in range(start_year, end_year+1):
     lebron_stats["Year"] = year
     lebron_career_stats.append(lebron_stats)
 
+# Combine all the data frames into one
+dataframe = pd.concat(lebron_career_stats, ignore_index=True)
+
 lebron_career_stats = repeated_headers_bball_ref(lebron_career_stats)
